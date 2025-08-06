@@ -22,9 +22,14 @@
   <link rel="stylesheet" href="plugins/theme-mode-switcher/switcher-panel.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- Custom stylesheet -->
-  <link rel="stylesheet" href="css/mobile-responsive.css">
-  <!-- Fluid Experience CSS -->
-  <link rel="stylesheet" href="css/fluid-experience.css">
+  <!-- Mobile Fix Complete - Menu + Image corrigés, desktop intact -->
+  <link rel="stylesheet" href="css/mobile-fix-complete.css">
+  <!-- Mobile Hero UI Fix - Solution experte responsive -->
+  <link rel="stylesheet" href="css/mobile-hero-ui-fix.css">
+  <!-- Mobile Header Improved - Header et navigation optimisés -->
+  <link rel="stylesheet" href="css/mobile-header-improved.css">
+  <!-- Mobile Animations - Animations fluides au scroll pour mobile -->
+  <link rel="stylesheet" href="css/mobile-animations.css">
   <style>
     /* Améliorations minimalistes Bloomcap */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -219,24 +224,7 @@
       border-color: transparent !important;
     }
     
-    /* Optimisation mobile */
-    @media (max-width: 768px) {
-      .section-padding {
-        padding: 3rem 0 !important;
-      }
-      
-      .single-feature {
-        padding: 1.5rem !important;
-      }
-      
-      h1 {
-        font-size: 2.5rem !important;
-      }
-      
-      h2 {
-        font-size: 2rem !important;
-      }
-    }
+    
   </style>
 </head>
 
@@ -402,46 +390,8 @@
 </div>
 <!-- /Hero Area -->
 
-<!-- Modern Responsive Tweaks -->
+<!-- Add Inter font for better typography -->
 <style>
-  @media (max-width: 767.98px) {
-    .welcome-content--l3 h1 {
-      font-size: 2.5rem !important;
-      line-height: 1.2 !important;
-    }
-
-    .welcome-content--l3 .d-inline-flex span {
-      font-size: 0.75rem !important;
-    }
-
-    .welcome-content--l3 p.fw-medium {
-      font-size: 1.1rem !important;
-    }
-
-    .welcome-content--l3 p[style*="font-style: italic"] {
-      font-size: 0.9rem !important;
-    }
-
-    .welcome-content--l3 .btn {
-      font-size: 0.9rem;
-      padding: 0.7rem 1.2rem;
-    }
-
-    .welcome-area .position-relative[style*="max-width: 420px"] {
-      max-width: 300px !important;
-      margin-top: 2rem;
-    }
-
-    .welcome-area .position-absolute[style*="right: -10%"] {
-      right: 0% !important;
-    }
-
-    .welcome-area .position-absolute[style*="left: -15%"] {
-      left: 0% !important;
-    }
-  }
-  
-  /* Add Inter font for better typography */
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
   
   /* Modern service cards styling */
@@ -614,7 +564,7 @@
             
             <!-- CTA Button Desktop - Positionnement stratégique -->
             <div class="hero-cta-container text-lg-start text-center d-lg-block d-none mt-5" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-              <a href="#formulaire" class="btn hero-cta-btn btn-lg px-5 py-3 fw-semibold">
+              <a href="#formulaire" class="btn btn-electric-violet-2 btn-lg px-5 py-3 fw-semibold text-white">
                 Démarrer maintenant
               </a>
             </div>
@@ -644,7 +594,7 @@
     <!-- CTA Button Mobile - Après la vidéo -->
     <div class="row justify-content-center d-lg-none mt-4">
       <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-        <a href="#formulaire" class="btn hero-cta-btn btn-lg px-5 py-3 fw-semibold">
+        <a href="#formulaire" class="btn btn-electric-violet-2 btn-lg px-5 py-3 fw-semibold text-white">
           Démarrer maintenant
         </a>
       </div>
@@ -681,8 +631,8 @@
     <!-- Blocs de bénéfices -->
     <div class="row justify-content-center text-start">
       <!-- Bloc 1 -->
-      <div class="col-md-6 col-lg-3 mb-6">
-        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-1">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-coins" style="font-size: 1.5rem; color: white;"></i>
           </div>
@@ -694,8 +644,8 @@
       </div>
 
       <!-- Bloc 2 -->
-      <div class="col-md-6 col-lg-3 mb-6">
-        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-2">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i>
           </div>
@@ -707,8 +657,8 @@
       </div>
 
       <!-- Bloc 3 -->
-      <div class="col-md-6 col-lg-3 mb-6">
-        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-3">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-receipt" style="font-size: 1.5rem; color: white;"></i>
           </div>
@@ -720,14 +670,28 @@
       </div>
 
       <!-- Bloc 4 -->
-      <div class="col-md-6 col-lg-3 mb-6">
-        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-4">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-cogs" style="font-size: 1.5rem; color: white;"></i>
           </div>
           <div class="widgets-services__single-content">
             <h3 class="widgets__heading">Vous gardez vos&nbsp;équipements</h3>
             <p class="widgets__text">Vous continuez de les utiliser sans&nbsp;interruption. À la fin, rachetez-les, renouvelez ou retournez selon vos&nbsp;besoins.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bandeau informatif -->
+    <div class="container-fluid py-3 mt-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="d-flex align-items-center justify-content-center p-4 rounded shadow-sm" data-aos="fade-up" data-aos-delay="150" style="background: #f4f9ff;">
+            <i class="ti ti-shield-check text-primary me-2" style="font-size: 1.25rem;"></i>
+            <p class="mb-0 text-center fw-medium" style="color: #374151; font-family: 'Inter', sans-serif; line-height: 1.6;">
+              <strong style="color: #1e40af;">À savoir :</strong> Le crédit-bail ne compte pas comme une dette. Vos ratios financiers restent optimaux, votre capacité d'emprunt intacte.
+            </p>
           </div>
         </div>
       </div>
@@ -1327,93 +1291,53 @@
 
 
 <!-- CTA with Form Section -->
-<section class="py-20" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); margin-top: 3rem;" id="formulaire">
+<section class="py-5" id="formulaire">
   <div class="container">
     <div class="row justify-content-center">
-      <!-- Form Column -->
-      <div class="col-xl-8 col-lg-8 mb-7 mb-lg-0">
-        <div class="mb-8 text-center">
+      <div class="col-md-8 mx-auto">
+        <div class="text-center mb-5">
           <h2 class="fw-bold mb-4" style="color: #1e40af; font-size: 2.8rem; line-height: 1.2; font-family: 'Inter', sans-serif; text-shadow: 0 2px 20px rgba(30, 64, 175, 0.1);">
             Prêt à débloquer vos <span style="color: #fbbf24;">liquidités</span> ?
           </h2>
-          <p style="color: #4b5563; font-size: 1.2rem; line-height: 1.7; font-family: 'Inter', sans-serif; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Contactez-nous dès maintenant pour une évaluation gratuite et personnalisée de vos équipements.
-          </p>
         </div>
 
-        <!-- Contact Form -->
-        <form action="index.html" class="contact-form">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="form-floating">
-                <input type="text" class="form-control" id="firstName" placeholder="Prénom" style="border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif;">
-                <label for="firstName" style="color: #6b7280; font-family: 'Inter', sans-serif;">Prénom *</label>
-              </div>
+        <div class="bg-white shadow-sm rounded p-4 my-5">
+          <form action="index.html" method="post">
+            <div class="mb-3">
+              <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" placeholder="Nom complet" required>
             </div>
-            <div class="col-lg-6">
-              <div class="form-floating">
-                <input type="text" class="form-control" id="lastName" placeholder="Nom" style="border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif;">
-                <label for="lastName" style="color: #6b7280; font-family: 'Inter', sans-serif;">Nom *</label>
-              </div>
+            
+            <div class="mb-3">
+              <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Courriel" required>
             </div>
-            <div class="col-lg-6">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="Email" style="border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif;">
-                <label for="email" style="color: #6b7280; font-family: 'Inter', sans-serif;">Adresse courriel *</label>
-              </div>
+            
+            <div class="mb-3">
+              <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Téléphone" required>
             </div>
-            <div class="col-lg-6">
-              <div class="form-floating">
-                <input type="tel" class="form-control" id="phone" placeholder="Téléphone" style="border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif;">
-                <label for="phone" style="color: #6b7280; font-family: 'Inter', sans-serif;">Numéro de téléphone *</label>
-              </div>
+            
+            <div class="mb-3">
+              <select class="form-control form-control-lg" id="equipmentType" name="equipmentType" required>
+                <option value="">Type d'équipement à monétiser</option>
+                <option value="agriculture">Agriculture</option>
+                <option value="transport">Transport</option>
+                <option value="construction">Construction</option>
+                <option value="industriel">Industriel</option>
+                <option value="medical">Médical</option>
+                <option value="restauration">Restauration</option>
+                <option value="autre">Autre</option>
+              </select>
             </div>
-            <div class="col-lg-12">
-              <div class="form-floating">
-                <select class="form-control" id="equipmentType" style="border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif;">
-                  <option value="">Sélectionnez le type d'équipement</option>
-                  <option value="agriculture">Agriculture</option>
-                  <option value="transport">Transport</option>
-                  <option value="construction">Construction</option>
-                  <option value="industriel">Industriel</option>
-                  <option value="medical">Médical</option>
-                  <option value="restauration">Restauration</option>
-                  <option value="autre">Autre</option>
-                </select>
-                <label for="equipmentType" style="color: #6b7280; font-family: 'Inter', sans-serif;">Type d'équipement</label>
-              </div>
+            
+            <div class="mb-4">
+              <input type="number" class="form-control form-control-lg" id="estimatedValue" name="estimatedValue" placeholder="Valeur estimée (€)" min="0" step="1000">
             </div>
-            <div class="col-lg-12">
-              <div class="form-floating">
-                <textarea class="form-control" id="message" placeholder="Message" style="height: 120px; border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px; padding: 1rem; background: rgba(248, 250, 252, 0.5); font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
-                <label for="message" style="color: #6b7280; font-family: 'Inter', sans-serif;">Décrivez vos équipements et vos besoins</label>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="row align-items-center">
-                <div class="col-md-8">
-                  <div class="form-check d-flex align-items-start">
-                    <input class="form-check-input mt-1" type="checkbox" value="" id="privacy" style="margin-right: 0.5rem;">
-                    <label class="form-check-label" for="privacy" style="color: #6b7280; font-size: 0.9rem; line-height: 1.4; font-family: 'Inter', sans-serif;">
-                      J'accepte que mes informations soient utilisées pour me contacter concernant ma demande d'évaluation. *
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                  <button type="submit" class="btn btn-lg px-5 py-3 fw-bold d-inline-flex align-items-center" 
-                          style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1e40af; border: none; border-radius: 16px; box-shadow: 0 12px 40px rgba(251, 191, 36, 0.3); transition: all 0.3s ease; transform: translateY(0); font-family: 'Inter', sans-serif;"
-                          onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 16px 50px rgba(251, 191, 36, 0.4)'"
-                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(251, 191, 36, 0.3)'">
-                    <i class="fas fa-paper-plane me-2"></i>
-                    Envoyer ma demande
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+            
+            <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill">
+              Obtenir mon estimation
+            </button>
+          </form>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1556,6 +1480,14 @@
   <!-- Activation Script -->
   <script src="js/menu.js"></script>
   <script src="js/custom.js"></script>
+  <!-- Mobile Menu Simple - Fiable et léger, desktop intact -->
+  <script src="js/mobile-menu-simple.js"></script>
+  <!-- Hero Mobile Enhancer - Optimisations JavaScript mobiles -->
+  <script src="js/hero-mobile-enhancer.js"></script>
+  <!-- Mobile Hero Animations - Animations fluides et optimisées -->
+  <script src="js/mobile-hero-animations.js"></script>
+  <!-- Mobile Scroll Animations - Observer léger pour animations au scroll -->
+  <script src="js/mobile-scroll-animations.js"></script>
   
 </body>
 

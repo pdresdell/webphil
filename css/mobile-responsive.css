@@ -3,6 +3,72 @@
    Optimisé pour viewport 375px (iPhone 12)
    ================================= */
 
+/* === DESIGN MOBILE PREMIUM - NOUVEAU === */
+@media (max-width: 768px) {
+  /* Corps et scrolling optimisé */
+  body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+  
+  .site-wrapper {
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  /* Header fixe moderne */
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Hero plein écran moderne */
+  .welcome-area {
+    min-height: 100vh !important;
+    min-height: 100dvh !important; /* Dynamic viewport height */
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 60px !important; /* Hauteur du header */
+    padding-bottom: 20px !important;
+  }
+  
+  .welcome-area .container {
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Suppression éléments superflus */
+  .welcome-area > div[style*="filter: blur"],
+  .welcome-area .position-absolute[style*="background: rgba(255, 255, 255, 0.1)"],
+  .welcome-area .position-absolute[style*="background: rgba(251, 191, 36, 0.2)"] {
+    display: none !important;
+  }
+  
+  /* Animations performantes */
+  [data-aos] {
+    transition-duration: 0.3s !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  /* Disable heavy animations */
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Touch-friendly interactions */
+  a, button, .btn, .card, .widgets {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+}
+
 @media (max-width: 576px) {
   
   /* === RESET GÉNÉRAL === */
@@ -87,49 +153,131 @@
     margin-bottom: 0.75rem !important;
   }
   
-  /* === HERO SECTION === */
+  /* === HERO MOBILE MODERNE === */
   .welcome-area {
-    min-height: auto !important;
-    padding-top: 5rem !important; /* Pour le header fixed */
-    padding-bottom: 2rem !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    padding-top: 70px !important;
+    padding-bottom: 20px !important;
+    display: flex !important;
+    align-items: center !important;
   }
   
-  .welcome-area .container[style*="min-height"] {
-    min-height: auto !important;
+  /* Contenu hero centré et compact */
+  .welcome-content--l3 {
+    text-align: center !important;
+    animation: heroFadeIn 0.8s ease-out !important;
   }
   
-  /* Badge du hero */
-  .welcome-content--l3 .d-inline-flex[style*="background: rgba(251, 191, 36"] {
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Titre impact mais lisible */
+  .welcome-content--l3 h1 {
+    font-size: 1.875rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+    font-weight: 800 !important;
+  }
+  
+  /* Badge premium style iOS */
+  .welcome-content--l3 .d-inline-flex {
     font-size: 0.7rem !important;
-    padding: 0.4rem 1rem !important;
+    padding: 0.4rem 0.875rem !important;
+    margin-bottom: 1rem !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    animation: badgeFadeIn 0.8s ease-out 0.2s backwards !important;
   }
   
-  /* Boutons du hero */
-  .welcome-area .btn {
-    width: 100% !important;
-    margin-bottom: 0.75rem !important;
-    padding: 0.75rem 1.5rem !important;
-    font-size: 0.95rem !important;
+  @keyframes badgeFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   
+  /* Boutons hero verticaux pour meilleure UX */
   .welcome-area .d-flex.gap-3 {
     flex-direction: column !important;
-    gap: 0 !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
     width: 100% !important;
+    margin-top: 1.5rem !important;
   }
   
-  /* Image hero avec stats */
-  .welcome-area .position-relative[style*="max-width: 420px"] {
-    max-width: 100% !important;
+  /* Boutons style app moderne */
+  .welcome-area .btn,
+  .welcome-area a[href*="youtube"],
+  .welcome-area a[href="#formulaire"] {
+    width: 100% !important;
+    max-width: 280px !important;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    border-radius: 14px !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  /* Effet tap mobile */
+  .welcome-area .btn:active,
+  .welcome-area a:active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+  }
+  
+  /* Image hero - Version mobile optimisée */
+  .welcome-area .col-lg-5 {
+    display: block !important;
     margin-top: 2rem !important;
+    animation: imageFadeIn 0.8s ease-out 0.6s backwards !important;
   }
   
-  /* Stats flottantes - les cacher ou repositionner */
-  .welcome-area .position-absolute[style*="top:"],
-  .welcome-area .position-absolute[style*="bottom:"] {
-    position: static !important;
-    display: inline-block !important;
-    margin: 0.5rem !important;
+  @keyframes imageFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .welcome-area .position-relative[style*="max-width: 420px"] {
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Glassmorphism sur l'image */
+  .welcome-area .p-4.rounded-4 {
+    padding: 0.75rem !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  /* Hide stats on mobile */
+  .welcome-area .position-absolute {
+    display: none !important;
   }
   
   /* === BOUTONS GLOBAUX === */
@@ -154,19 +302,60 @@
     text-align: center !important;
   }
   
-  /* === NAVIGATION MOBILE === */
+  /* === NAVIGATION PREMIUM MOBILE === */
   .site-header {
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  /* Hide on scroll down, show on scroll up */
+  .site-header.scrolled-down {
+    transform: translateY(-100%) !important;
+  }
+  
+  .navbar {
     padding: 0.75rem 0 !important;
+    min-height: 60px !important;
   }
   
-  .brand-logo span {
-    font-size: 1.25rem !important;
+  /* Logo animation on load */
+  @keyframes logoSlide {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
   }
   
-  /* Bouton burger */
-  .mobile-menu-trigger {
-    width: 40px !important;
-    height: 40px !important;
+  .brand-logo {
+    animation: logoSlide 0.5s ease-out !important;
+  }
+  
+  /* Menu burger interactif */
+  @keyframes burgerPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .mobile-menu-trigger:active {
+    animation: burgerPulse 0.3s ease !important;
+  }
+  
+  /* Menu slide moderne */
+  .menu-block {
+    transform: translateX(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .menu-block.is-active {
+    transform: translateX(0) !important;
   }
   
   /* === CARDS ET WIDGETS === */
@@ -284,32 +473,94 @@
     margin-right: auto !important;
   }
   
-  /* === ANIMATIONS === */
-  /* Désactiver certaines animations pour performance */
+  /* === ANIMATIONS FLUIDES MOBILE === */
+  /* Keep light animations for better UX */
   [data-aos] {
+    opacity: 0 !important;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out !important;
+  }
+  
+  [data-aos].aos-animate {
     opacity: 1 !important;
-    transform: none !important;
+  }
+  
+  [data-aos="fade-up"].aos-animate {
+    transform: translateY(0) !important;
+  }
+  
+  [data-aos="fade-up"] {
+    transform: translateY(20px) !important;
+  }
+  
+  /* Simple scale animation for cards */
+  @keyframes cardAppear {
+    from { 
+      opacity: 0;
+      transform: translateY(15px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .card, .widgets {
+    animation: cardAppear 0.4s ease-out backwards !important;
+  }
+  
+  .card:nth-child(1) { animation-delay: 0.1s !important; }
+  .card:nth-child(2) { animation-delay: 0.2s !important; }
+  .card:nth-child(3) { animation-delay: 0.3s !important; }
+}
+
+/* === OPTIMISATIONS SUPPLÉMENTAIRES === */
+
+/* Formulaire de contact mobile */
+@media (max-width: 576px) {
+  #formulaire .form-control-lg {
+    padding: 0.625rem 0.875rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  #formulaire .btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  #formulaire .col-md-8 {
+    padding: 0 1rem !important;
   }
 }
 
 /* === MEDIA QUERY POUR TRÈS PETITS ÉCRANS (< 375px) === */
 @media (max-width: 374px) {
-  h1 {
-    font-size: 1.5rem !important;
+  h1, .welcome-content--l3 h1 {
+    font-size: 1.35rem !important;
   }
   
   h2 {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
   
-  .btn {
-    font-size: 0.875rem !important;
-    padding: 0.625rem 1.25rem !important;
+  .welcome-area .btn {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.75rem !important;
+    max-width: 140px !important;
   }
   
   .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* Navigation encore plus compacte */
+  .brand-logo span {
+    font-size: 1.1rem !important;
+  }
+  
+  .header-btn .btn {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.75rem !important;
   }
 }
 
@@ -490,6 +741,103 @@
 /* Classes personnalisées pour AOS */
 .animate-card {
   animation: slideScale 0.8s ease-out forwards;
+}
+
+/* Application des mêmes animations aux widgets - AMÉLIORÉ POUR BÉNÉFICES */
+.widgets.animate-card {
+  animation: slideScale 0.8s ease-out forwards;
+  background: linear-gradient(145deg, #ffffff, #f8fafc) !important;
+  border: 1px solid rgba(30, 64, 175, 0.08) !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.widgets.animate-card:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 
+    0 25px 50px rgba(30, 64, 175, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(30, 64, 175, 0.2) !important;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9) !important;
+}
+
+/* Pseudo-élément pour effet de brillance sur les widgets bénéfices */
+.widgets.animate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.widgets.animate-card:hover::before {
+  left: 100%;
+}
+
+/* Rythme visuel - Alternance pour les widgets bénéfices */
+.widgets.animate-card:nth-child(even) {
+  background: linear-gradient(145deg, #ffffff, #f1f5f9) !important;
+  border-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+.widgets.animate-card:nth-child(odd) {
+  background: linear-gradient(145deg, #fefefe, #f8fafc) !important;
+  border-color: rgba(30, 64, 175, 0.08) !important;
+}
+
+/* Alignement correct des cartes bénéfices - suppression des décalages */
+@media (min-width: 992px) {
+  .col-md-6 .widgets.animate-card {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Améliorations des icônes dans les widgets bénéfices */
+.widgets.animate-card .d-flex {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.widgets.animate-card:hover .d-flex {
+  transform: scale(1.1) !important;
+  animation: pulse-glow 2s infinite !important;
+}
+
+/* Améliorations typographiques pour widgets bénéfices */
+.widgets.animate-card h3 {
+  position: relative !important;
+  z-index: 2 !important;
+  transition: color 0.3s ease !important;
+}
+
+.widgets.animate-card:hover h3 {
+  color: #1e40af !important;
+}
+
+.widgets.animate-card p {
+  position: relative !important;
+  z-index: 2 !important;
+  transition: color 0.3s ease !important;
+}
+
+.widgets.animate-card:hover p {
+  color: #374151 !important;
 }
 
 .animate-delay-1 { animation-delay: 0.1s; }

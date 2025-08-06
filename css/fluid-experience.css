@@ -15,11 +15,11 @@
   opacity: 1;
 }
 
-/* Animations d'apparition fluides */
+/* Animations d'apparition fluides - Optimisées mobile */
 @keyframes smoothFadeUp {
   from {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(30px); /* Réduit de 60px à 30px */
   }
   to {
     opacity: 1;
@@ -27,10 +27,24 @@
   }
 }
 
+/* Version mobile encore plus légère */
+@media (max-width: 768px) {
+  @keyframes smoothFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 @keyframes smoothSlideLeft {
   from {
     opacity: 0;
-    transform: translateX(-60px);
+    transform: translateX(-30px); /* Réduit de 60px */
   }
   to {
     opacity: 1;
@@ -41,11 +55,26 @@
 @keyframes smoothSlideRight {
   from {
     opacity: 0;
-    transform: translateX(60px);
+    transform: translateX(30px); /* Réduit de 60px */
   }
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Animations horizontales désactivées sur mobile */
+@media (max-width: 768px) {
+  @keyframes smoothSlideLeft,
+  @keyframes smoothSlideRight {
+    from {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -280,6 +309,19 @@
 /* Réduction des animations sur mobile pour performance */
 @media (max-width: 768px) {
   
+  /* Désactiver animations complexes */
+  .hero-visual,
+  .grid-card,
+  [data-aos*="slide"],
+  [data-aos*="zoom"] {
+    animation: simpleFade 0.4s ease-out both !important;
+  }
+  
+  @keyframes simpleFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
   /* Simplification des hover effects */
   .card-interactive:hover {
     transform: translateY(-4px) !important;
@@ -292,7 +334,15 @@
   
   /* Réduction des délais d'animation */
   .grid-card:nth-child(n) {
-    animation-delay: 0.1s !important;
+    animation-delay: 0s !important;
+  }
+  
+  /* Désactiver les animations en cascade sur mobile */
+  .hero-title,
+  .hero-subtitle,
+  .hero-description,
+  .hero-cta {
+    animation-delay: 0s !important;
   }
   
   /* Espacements mobiles */
@@ -321,6 +371,24 @@
   background-attachment: scroll !important;
 }
 
+/* Performance mobile - désactiver effets lourds */
+@media (max-width: 768px) {
+  /* Désactiver parallaxe sur mobile */
+  .parallax-subtle {
+    background-attachment: scroll !important;
+  }
+  
+  /* Supprimer les effets de glow */
+  .section-glow::after {
+    display: none !important;
+  }
+  
+  /* Simplifier les transitions */
+  * {
+    transition-duration: 0.3s !important;
+  }
+}
+
 /* Amélioration de la fluidité scroll */
 html {
   scroll-behavior: smooth;
@@ -338,6 +406,37 @@ html {
   
   [data-aos] {
     animation: none !important;
+  }
+}
+
+/* === OPTIMISATIONS MOBILE SUPPLÉMENTAIRES === */
+@media (max-width: 576px) {
+  /* Forcer l'accélération matérielle pour fluidité */
+  .card,
+  .widgets,
+  .step-card,
+  .service-item,
+  .feature-item {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Amélioration du scroll */
+  .site-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Réduction des ombres pour performance */
+  .card,
+  .widgets {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  .card:hover,
+  .widgets:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
   }
 }
 
