@@ -230,14 +230,14 @@
 
 <body data-theme-mode-panel-active data-theme="light">
   <div class="site-wrapper overflow-hidden ">
-    <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+    <div id="loading">
       <style>
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
       </style>
-      <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 4rem; color: #1e40af; animation: spin 1s linear infinite;">$</div>
     </div>
     <!-- Clean The Code And Hop in -->
     <!-- Header Area -->
@@ -459,7 +459,7 @@
               Problématiques actuelles
             </span>
           </div>
-          <h2 class="section-title__heading fw-bold mb-6 hero-title" style="color: #1e40af; font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif;">
+          <h2 class="section-title__heading fw-bold mb-6 hero-title" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" style="color: #1e40af; font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif;">
             Le parcours de financement, encore mal adapté aux réalités des PME
           </h2>
           <div class="mx-auto mb-6" style="width: 80px; height: 3px; background: linear-gradient(45deg, #1e40af, #fbbf24); border-radius: 2px;"></div>
@@ -538,7 +538,7 @@
       <!-- Text Content (toujours en haut sur mobile) -->
       <div class="col-xl-5 col-lg-6 col-md-10 order-1 order-lg-1">
         <div class="about-us-left mt-3 mt-lg-5">
-          <div class="text-center text-lg-start">
+          <div class="text-center text-lg-start" data-aos="fade-up" data-aos-duration="500">
             
             <div class="d-inline-flex align-items-center mb-6 px-3 py-2 rounded-pill" style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2);">
               <span class="fw-semibold" style="font-size: 0.85rem; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -563,7 +563,7 @@
             </p>
             
             <!-- CTA Button Desktop - Positionnement stratégique -->
-            <div class="hero-cta-container text-lg-start text-center d-lg-block d-none mt-5">
+            <div class="hero-cta-container text-lg-start text-center d-lg-block d-none mt-5" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
               <a href="#formulaire" class="btn btn-electric-violet-2 btn-lg px-5 py-3 fw-semibold text-white">
                 Démarrer maintenant
               </a>
@@ -574,7 +574,7 @@
 
       <!-- Video Content (toujours en bas sur mobile) -->
       <div class="col-xl-7 col-lg-6 col-md-10 order-2 order-lg-2 d-flex justify-content-center">
-        <div class="about-us__image text-center position-relative">
+        <div class="about-us__image text-center position-relative" data-aos="fade-left" data-aos-duration="500">
           <div class="position-relative" style="max-width: 600px; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);">
             <img class="w-100" src="https://img.youtube.com/vi/Ljid39JfZXo/maxresdefault.jpg" alt="Video preview" style="filter: brightness(0.9);" />
             <div class="position-absolute top-50 start-50 translate-middle">
@@ -593,7 +593,7 @@
 
     <!-- CTA Button Mobile - Après la vidéo -->
     <div class="row justify-content-center d-lg-none mt-4">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
         <a href="#formulaire" class="btn btn-electric-violet-2 btn-lg px-5 py-3 fw-semibold text-white">
           Démarrer maintenant
         </a>
@@ -619,9 +619,12 @@
     <div class="row justify-content-center text-center">
       <div class="col-lg-10">
         <div class="section-title section-title--l7 mb-8">
-          <div class="mb-3" style="height: 40px;">
+          <div class="d-inline-flex align-items-center mb-3 px-3 py-2 rounded-pill" style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2);">
+            <span class="fw-semibold" style="font-size: 0.85rem; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.5px;">
+              Bénéfices concrets
+            </span>
           </div>
-          <h2 class="section-title__heading fw-bold mb-8" style="color: #1e40af; font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif; text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);">
+          <h2 class="section-title__heading fw-bold mb-8" data-aos="fade-up" data-aos-duration="500" data-aos-once="true" style="color: #1e40af; font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif; text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);">
             Concrètement, voici ce que ça vous apporte
           </h2>
           <div class="mx-auto mb-6" style="width: 80px; height: 3px; background: linear-gradient(45deg, #fbbf24, #1e40af); border-radius: 2px;"></div>
@@ -632,7 +635,7 @@
     <!-- Blocs de bénéfices -->
     <div class="row justify-content-center text-start">
       <!-- Bloc 1 -->
-      <div class="col-md-6 col-lg-3 mb-6">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-1">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-coins" style="font-size: 1.5rem; color: white;"></i>
@@ -645,7 +648,7 @@
       </div>
 
       <!-- Bloc 2 -->
-      <div class="col-md-6 col-lg-3 mb-6">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
         <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-2">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i>
@@ -658,7 +661,7 @@
       </div>
 
       <!-- Bloc 3 -->
-      <div class="col-md-6 col-lg-3 mb-6">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
         <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-3">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-receipt" style="font-size: 1.5rem; color: white;"></i>
@@ -671,7 +674,7 @@
       </div>
 
       <!-- Bloc 4 -->
-      <div class="col-md-6 col-lg-3 mb-6">
+      <div class="col-md-6 col-lg-3 mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <div class="widgets widgets__services-single text-center h-100 p-4 rounded bg-light shadow-sm animate-card animate-delay-4">
           <div class="d-flex align-items-center justify-content-center mb-6" style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 16px; margin: 0 auto;">
             <i class="fas fa-cogs" style="font-size: 1.5rem; color: white;"></i>
@@ -688,7 +691,7 @@
     <div class="container-fluid py-3 mt-4">
       <div class="row justify-content-center">
         <div class="col-lg-10 col-xl-8">
-          <div class="d-flex align-items-center justify-content-center p-4 rounded shadow-sm" style="background: #f4f9ff;">
+          <div class="d-flex align-items-center justify-content-center p-4 rounded shadow-sm" data-aos="fade-up" data-aos-delay="150" style="background: #f4f9ff;">
             <i class="ti ti-shield-check text-primary me-2" style="font-size: 1.25rem;"></i>
             <p class="mb-0 text-center fw-medium" style="color: #374151; font-family: 'Inter', sans-serif; line-height: 1.6;">
               <strong style="color: #1e40af;">À savoir :</strong> Le crédit-bail ne compte pas comme une dette. Vos ratios financiers restent optimaux, votre capacité d'emprunt intacte.
@@ -706,7 +709,7 @@
            style="background: linear-gradient(45deg, #1e40af, #3b82f6); color: white; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(30, 64, 175, 0.3); transition: all 0.3s ease; transform: translateY(0); text-decoration: none;"
            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 40px rgba(30, 64, 175, 0.4)'"
            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(30, 64, 175, 0.3)'"
-          >
+           data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true">
           Évaluer mon équipement maintenant
         </a>
       </div>
@@ -721,12 +724,15 @@
 
 
 <!-- Section Fusionnée : Éligibilité + Exemples -->
-<section id="adaptation" class="section-wide section-padding-lg bg-white position-relative overflow-hidden">
-  <div class="container-xl px-4 px-lg-5">
+<section class="section-padding-lg section-bg-secondary section-separator" data-aos="fade-up" data-aos-duration="800">
+  <div class="container">
     
     <!-- En-tête de section -->
     <div class="text-center mb-12">
-      <div class="mb-4" style="height: 40px;">
+      <div class="d-inline-flex align-items-center mb-4 px-4 py-2 rounded-pill" style="background: rgba(30, 64, 175, 0.1); border: 1px solid rgba(30, 64, 175, 0.2);">
+        <span class="fw-semibold" style="font-size: 0.85rem; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+          Vérification
+        </span>
       </div>
       <h2 class="fw-bold mb-4" style="font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif; color: #1e40af;">
         Est-ce adapté à votre situation ?
@@ -830,7 +836,7 @@
 </section>
 
 <!-- Équipements Admissibles Section -->
-<section class="section-padding-md section-bg-gradient-3 section-separator" style="position: relative; overflow: hidden;">
+<section class="section-padding-md section-bg-gradient-3 section-separator" style="position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="800">
   <!-- Background Elements -->
   <div class="position-absolute" style="top: -50%; left: -10%; width: 200px; height: 200px; background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(251, 191, 36, 0.1)); border-radius: 50%; filter: blur(60px);"></div>
   <div class="position-absolute" style="bottom: -30%; right: -5%; width: 150px; height: 150px; background: linear-gradient(45deg, rgba(251, 191, 36, 0.1), rgba(59, 130, 246, 0.1)); border-radius: 50%; filter: blur(40px);"></div>
@@ -919,7 +925,13 @@
   <div class="container position-relative">
     <!-- Section Header -->
     <div class="text-center mb-5">
-      <div class="mb-4" style="height: 50px;">
+      <div class="d-inline-flex align-items-center mb-4 px-4 py-3" style="background: rgba(30, 64, 175, 0.1); border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 50px;">
+        <div class="d-flex align-items-center justify-content-center me-3" style="width: 32px; height: 32px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 8px;">
+          <i class="fas fa-route" style="font-size: 0.9rem; color: white;"></i>
+        </div>
+        <span class="fw-bold" style="font-size: 0.9rem; color: #1e40af; text-transform: uppercase; letter-spacing: 0.8px; font-family: 'Inter', sans-serif;">
+          Processus simplifié
+        </span>
       </div>
       
       <h2 class="fw-bold mb-4" style="color: #1e40af; font-size: 2.8rem; line-height: 1.2; font-family: 'Inter', sans-serif;">
@@ -935,7 +947,7 @@
     <div class="row justify-content-center g-4 mb-5">
       
       <!-- Step 1 -->
-      <div class="col-lg-6 col-xl-3 col-md-6">
+      <div class="col-lg-6 col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <div class="step-card position-relative bg-white rounded-4 shadow-lg h-100 animate-card animate-delay-1" style="padding: 2.5rem 2rem;">
           
           <!-- Badge numéro -->
@@ -963,7 +975,7 @@
       </div>
 
       <!-- Step 2 -->
-      <div class="col-lg-6 col-xl-3 col-md-6">
+      <div class="col-lg-6 col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
         <div class="step-card position-relative bg-white rounded-4 shadow-lg h-100 animate-card animate-delay-2" style="padding: 2.5rem 2rem;">
           
           <!-- Badge numéro -->
@@ -991,7 +1003,7 @@
       </div>
 
       <!-- Step 3 -->
-      <div class="col-lg-6 col-xl-3 col-md-6">
+      <div class="col-lg-6 col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
         <div class="step-card position-relative bg-white rounded-4 shadow-lg h-100 animate-card animate-delay-3" style="padding: 2.5rem 2rem;">
           
           <!-- Badge numéro -->
@@ -1019,7 +1031,7 @@
       </div>
 
       <!-- Step 4 -->
-      <div class="col-lg-6 col-xl-3 col-md-6">
+      <div class="col-lg-6 col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <div class="step-card position-relative bg-white rounded-4 shadow-lg h-100 animate-card animate-delay-4" style="padding: 2.5rem 2rem;">
           
           <!-- Badge numéro -->
@@ -1061,18 +1073,198 @@
   </div>
 </section>
 
+<!-- Alternative Solution Section -->
+<section class="py-5 bg-white">
+  <div class="container py-4">
+    <div class="row align-items-center">
+      
+      <!-- Illustration -->
+      <div class="col-md-6 order-2 order-md-1 text-center">
+        <img src="image/image2.svg" alt="Options alternatives" class="img-fluid rounded" style="max-width: 400px;">
+      </div>
+      
+      <!-- Content -->
+      <div class="col-md-6 order-1 order-md-2">
+        <div class="ps-md-4">
+          <!-- Title with icon -->
+          <h5 class="fw-bold mb-3 d-flex align-items-center" style="color: #1e40af; font-size: 1.4rem; font-family: 'Inter', sans-serif;">
+            <i class="fas fa-question-circle text-primary me-2" style="font-size: 1.2rem;"></i>
+            Votre entreprise ne possède pas d'équipements ?
+          </h5>
+          
+          <!-- Description -->
+          <p class="text-muted mb-4" style="font-size: 1rem; line-height: 1.6; font-family: 'Inter', sans-serif;">
+            Pas de souci. Nous proposons aussi une solution adaptée aux entreprises qui ne sont pas admissibles à cette offre.
+          </p>
+          
+          <!-- CTA Button -->
+          <a href="financement-rapide.html" class="btn d-inline-flex align-items-center" style="background: #ef4444; color: white; border: none; font-weight: 500; font-family: 'Inter', sans-serif; padding: 0.75rem 1.5rem; border-radius: 8px;">
+            Découvrir notre autre solution
+            <i class="fas fa-arrow-right ms-2" style="font-size: 0.9rem;"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); margin-top: 3rem;">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-8">
+      <div class="d-inline-flex align-items-center mb-4 px-4 py-3" style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 50px;">
+        <div class="d-flex align-items-center justify-content-center me-3" style="width: 32px; height: 32px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 8px;">
+          <i class="fas fa-question" style="font-size: 0.9rem; color: white;"></i>
+        </div>
+        <span class="fw-bold" style="font-size: 0.9rem; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.8px; font-family: 'Inter', sans-serif;">
+          Questions fréquentes
+        </span>
+      </div>
+      <h2 class="fw-bold mb-4" style="color: #1e40af; font-size: 2.8rem; line-height: 1.2; font-family: 'Inter', sans-serif;">
+        FAQ
+      </h2>
+      <p class="mx-auto mb-6" style="color: #4b5563; font-size: 1.2rem; line-height: 1.7; max-width: 700px; font-family: 'Inter', sans-serif;">
+        Retrouvez les réponses aux questions les plus fréquemment posées sur notre solution de financement par sale-leaseback d'équipement.
+      </p>
+      
+      <!-- Image illustrative -->
+      <div class="text-center mb-8">
+        <img src="image/image3.svg" alt="Questions fréquentes" class="img-fluid" style="max-width: 300px; opacity: 0.8;">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 px-4">
+        <div class="accordion" id="faqAccordion">
+          <!-- FAQ Item 1 -->
+          <div class="accordion-item mb-4" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5); box-shadow: 0 4px 20px rgba(30, 64, 175, 0.05);">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                En quoi consiste le financement par sale-leaseback d'équipement ?
+              </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Le financement par sale-leaseback implique qu'une entreprise vende ses équipements à une société de location puis les reprenne en location pour continuer à les utiliser. Cela permet à l'entreprise d'accéder à des liquidités immédiates tout en conservant l'usage de ses équipements essentiels.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Quels sont les principaux avantages de cette solution ?
+              </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Les avantages incluent l'amélioration du flux de trésorerie, la libération de la valeur immobilisée dans les équipements et l'évitement des coûts et responsabilités de propriété. Cela permet également aux entreprises d'investir le capital libéré dans la croissance ou d'autres besoins opérationnels.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Mon entreprise est-elle admissible à ce type de financement ?
+              </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Toute entreprise qui possède des équipements de valeur et a besoin de capital peut être admissible. Les secteurs comme la fabrication, la construction, le transport et la santé utilisent souvent cette méthode de financement. Un bon historique de crédit et un flux de trésorerie fiable sont des facteurs importants d'admissibilité.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- FAQ Item 4 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq4">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Quels types d'équipements sont généralement acceptés ?
+              </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Les types courants comprennent la machinerie de fabrication, l'équipement de construction, les appareils médicaux, les véhicules de transport et le matériel informatique. L'équipement doit être en bon état et essentiel aux opérations de l'entreprise.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- FAQ Item 5 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq5">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Combien de temps faut-il pour accéder aux fonds ?
+              </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Le délai pour accéder aux fonds peut varier selon la complexité de la transaction, mais reste généralement plus rapide que les méthodes de financement traditionnelles. Une fois l'équipement approuvé et l'entente finalisée, les entreprises peuvent souvent recevoir les fonds environ 5 jours ouvrables plus tard.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- FAQ Item 6 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq6">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Puis-je racheter mon équipement à la fin du bail ?
+              </button>
+            </h2>
+            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Oui, les ententes de sale-leaseback d'équipement incluent une option de rachat de l'équipement à la fin du terme de location. Le prix de rachat est typiquement convenu lors de la transaction initiale et est généralement fixé à un montant nominal tel que 10$.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 7 -->
+          <div class="accordion-item mb-3" style="border: 1px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: rgba(248, 250, 252, 0.5);">
+            <h2 class="accordion-header" id="faq7">
+              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
+                <i class="fas fa-plus me-3" style="color: #f59e0b; transition: transform 0.3s ease;"></i>
+                Comment cette solution se compare-t-elle aux prêts ou locations traditionnels ?
+              </button>
+            </h2>
+            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
+                Un sale-leaseback peut fournir du capital immédiat sans contracter de dette supplémentaire, contrairement aux prêts ou locations traditionnels. Il peut être plus flexible et ne nécessite pas de garantie au-delà de l'équipement lui-même.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Ultra-Modern Glassmorphism Lead Generation Form -->
-<section id="liquidite" class="section-wide section-padding-lg position-relative overflow-hidden" style="
+<section class="py-5" id="formulaire" style="
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   min-height: 100vh;
-  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
 ">
   
-  <!-- Background Elements - Removed animation -->
-  <!-- <div class="position-absolute top-0 start-0 w-100 h-100" style="
-    background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3Cpattern id=%22dots%22 width=%2220%22 height=%2220%22 patternUnits=%22userSpaceOnUse%22%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%221%22 fill=%22%23ffffff%22 opacity=%220.1%22/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 fill=%22url(%23dots)%22/%3E%3C/svg%3E');
+  <!-- Animated Background Elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="
+    background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"dots\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\"><circle cx=\"10\" cy=\"10\" r=\"1\" fill=\"%23ffffff\" opacity=\"0.1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23dots)\"/></svg>');
     animation: drift 20s ease-in-out infinite alternate;
-  "></div> -->
+  "></div>
   
   <!-- Floating Orbs -->
   <div class="position-absolute" style="
@@ -1094,12 +1286,12 @@
     animation: float 8s ease-in-out infinite reverse;
   "></div>
   
-  <div class="container-xl px-4 px-lg-5 position-relative" style="z-index: 10;">
+  <div class="container position-relative" style="z-index: 10;">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-8">
         
         <!-- Header Section -->
-        <div class="text-center mb-5">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
           <h1 class="display-4 fw-bold mb-4" style="
             color: white;
             font-family: 'Poppins', sans-serif;
@@ -1134,7 +1326,7 @@
         </div>
 
         <!-- Progress Bar -->
-        <div class="mb-5">
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
           <div class="progress-container" style="
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
@@ -1166,10 +1358,7 @@
           border: 1px solid rgba(30, 64, 175, 0.1);
           box-shadow: 0 20px 80px rgba(30, 64, 175, 0.15);
           overflow: hidden;
-          max-width: 800px;
-          margin: 40px auto;
-          padding: 20px;
-        ">
+        " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           
           <div class="p-4 p-md-6">
             
@@ -1424,192 +1613,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="section-padding-lg bg-white position-relative overflow-hidden">
-  <div class="container">
-    <!-- Section Header -->
-    <div class="text-center mb-8">
-      <div class="mb-4" style="height: 50px;">
-      </div>
-      <h2 class="fw-bold mb-4" style="color: #1e40af; font-size: 2.5rem; line-height: 1.2; font-family: 'Inter', sans-serif;">
-        Questions fréquemment posées
-      </h2>
-      <p class="mx-auto mb-6" style="color: #4b5563; font-size: 1.2rem; line-height: 1.7; max-width: 700px; font-family: 'Inter', sans-serif;">
-        Retrouvez les réponses aux questions les plus fréquemment posées sur notre solution de financement par sale-leaseback d'équipement.
-      </p>
-      
-      <!-- Image illustrative -->
-      <div class="text-center mb-8">
-        <img src="image/image3.svg" alt="Questions fréquentes" class="img-fluid" style="max-width: 300px; opacity: 0.8;">
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-8 px-4">
-        <div class="accordion" id="faqAccordion">
-          <!-- FAQ Item 1 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq1">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                En quoi consiste le financement par sale-leaseback d'équipement ?
-              </button>
-            </h2>
-            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Le financement par sale-leaseback implique qu'une entreprise vende ses équipements à une société de location puis les reprenne en location pour continuer à les utiliser. Cela permet à l'entreprise d'accéder à des liquidités immédiates tout en conservant l'usage de ses équipements essentiels.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 2 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq2">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Quels sont les principaux avantages de cette solution ?
-              </button>
-            </h2>
-            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Les avantages incluent l'amélioration du flux de trésorerie, la libération de la valeur immobilisée dans les équipements et l'évitement des coûts et responsabilités de propriété. Cela permet également aux entreprises d'investir le capital libéré dans la croissance ou d'autres besoins opérationnels.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 3 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq3">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Mon entreprise est-elle admissible à ce type de financement ?
-              </button>
-            </h2>
-            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Toute entreprise qui possède des équipements de valeur et a besoin de capital peut être admissible. Les secteurs comme la fabrication, la construction, le transport et la santé utilisent souvent cette méthode de financement. Un bon historique de crédit et un flux de trésorerie fiable sont des facteurs importants d'admissibilité.
-              </div>
-            </div>
-          </div>
-
-
-          <!-- FAQ Item 4 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq4">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Quels types d'équipements sont généralement acceptés ?
-              </button>
-            </h2>
-            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Les types courants comprennent la machinerie de fabrication, l'équipement de construction, les appareils médicaux, les véhicules de transport et le matériel informatique. L'équipement doit être en bon état et essentiel aux opérations de l'entreprise.
-              </div>
-            </div>
-          </div>
-
-
-          <!-- FAQ Item 5 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq5">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Combien de temps faut-il pour accéder aux fonds ?
-              </button>
-            </h2>
-            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Le délai pour accéder aux fonds peut varier selon la complexité de la transaction, mais reste généralement plus rapide que les méthodes de financement traditionnelles. Une fois l'équipement approuvé et l'entente finalisée, les entreprises peuvent souvent recevoir les fonds environ 5 jours ouvrables plus tard.
-              </div>
-            </div>
-          </div>
-
-
-          <!-- FAQ Item 6 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq6">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Puis-je racheter mon équipement à la fin du bail ?
-              </button>
-            </h2>
-            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Oui, les ententes de sale-leaseback d'équipement incluent une option de rachat de l'équipement à la fin du terme de location. Le prix de rachat est typiquement convenu lors de la transaction initiale et est généralement fixé à un montant nominal tel que 10$.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Item 7 -->
-          <div class="accordion-item mb-4" style="border: 2px solid rgba(30, 64, 175, 0.1); border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08); transition: all 0.3s ease;">
-            <h2 class="accordion-header" id="faq7">
-              <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7" style="background: transparent; border: none; border-radius: 16px; color: #1e40af; font-family: 'Inter', sans-serif; padding: 1.5rem;">
-                <div class="faq-icon-box">
-                  <i class="fas fa-plus"></i>
-                </div>
-                Comment cette solution se compare-t-elle aux prêts ou locations traditionnels ?
-              </button>
-            </h2>
-            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqAccordion">
-              <div class="accordion-body" style="padding: 0 1.5rem 1.5rem; color: #4b5563; font-family: 'Inter', sans-serif; line-height: 1.6;">
-                Un sale-leaseback peut fournir du capital immédiat sans contracter de dette supplémentaire, contrairement aux prêts ou locations traditionnels. Il peut être plus flexible et ne nécessite pas de garantie au-delà de l'équipement lui-même.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Alternative Solution Section -->
-<section class="py-5 bg-white">
-  <div class="container py-4">
-    <div class="row align-items-center">
-      
-      <!-- Illustration -->
-      <div class="col-md-6 order-2 order-md-1 text-center">
-        <img src="image/image2.svg" alt="Options alternatives" class="img-fluid rounded" style="max-width: 400px;">
-      </div>
-      
-      <!-- Content -->
-      <div class="col-md-6 order-1 order-md-2">
-        <div class="ps-md-4">
-          <!-- Title with icon -->
-          <h5 class="fw-bold mb-3 d-flex align-items-center" style="color: #1e40af; font-size: 1.4rem; font-family: 'Inter', sans-serif;">
-            <i class="fas fa-question-circle text-primary me-2" style="font-size: 1.2rem;"></i>
-            Votre entreprise ne possède pas d'équipements ?
-          </h5>
-          
-          <!-- Description -->
-          <p class="text-muted mb-4" style="font-size: 1rem; line-height: 1.6; font-family: 'Inter', sans-serif;">
-            Pas de souci. Nous proposons aussi une solution adaptée aux entreprises qui ne sont pas admissibles à cette offre.
-          </p>
-          
-          <!-- CTA Button -->
-          <a href="financement-rapide.html" class="btn d-inline-flex align-items-center" style="background: #ef4444; color: white; border: none; font-weight: 500; font-family: 'Inter', sans-serif; padding: 0.75rem 1.5rem; border-radius: 8px;">
-            Découvrir notre autre solution
-            <i class="fas fa-arrow-right ms-2" style="font-size: 0.9rem;"></i>
-          </a>
-        </div>
-      </div>
-      
     </div>
   </div>
 </section>
@@ -2306,123 +2309,6 @@ textarea.simple-form-input {
     padding: 0.75rem;
   }
 }
-
-/* FAQ Section Styles */
-.accordion-item {
-  overflow: hidden;
-}
-
-.accordion-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(30, 64, 175, 0.12) !important;
-  border-color: rgba(30, 64, 175, 0.2) !important;
-}
-
-.accordion-button {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.accordion-button:not(.collapsed) {
-  background: linear-gradient(to right, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.05)) !important;
-  box-shadow: none;
-}
-
-.accordion-button:hover {
-  background: rgba(30, 64, 175, 0.03);
-}
-
-.accordion-button::after {
-  display: none;
-}
-
-.accordion-button:not(.collapsed) .fa-plus {
-  transform: rotate(45deg);
-}
-
-.accordion-body {
-  background: rgba(248, 250, 252, 0.5);
-  border-top: 1px solid rgba(30, 64, 175, 0.1);
-}
-
-/* FAQ Icon Box */
-.faq-icon-box {
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-right: 12px;
-}
-
-.faq-icon-box i {
-  color: white;
-  font-size: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-.accordion-button:not(.collapsed) .faq-icon-box {
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-}
-
-.accordion-button:not(.collapsed) .faq-icon-box i {
-  transform: rotate(45deg);
-}
-
-/* Footer Styles */
-.footer-section--l3 .footer-widgets__list li {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.footer-section--l3 .footer-widgets__list a {
-  color: rgba(255, 255, 255, 0.8) !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-section--l3 .footer-widgets__list a:hover {
-  color: white !important;
-  text-decoration: underline;
-}
-
-.footer-section--l3 .footer-social-share a {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white !important;
-  transition: all 0.3s ease;
-}
-
-.footer-section--l3 .footer-social-share a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.footer-section--l3 .footer-social-share i {
-  color: white !important;
-}
-
-.footer-section--l3 .copyright-block {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
-  margin-top: 3rem;
-}
-
-/* Section Wide Styles */
-.section-wide {
-  /* Utilise le même style que la FAQ */
-}
-
-/* Utilitaire pour largeur max sur desktop */
-@media (min-width: 992px) {
-  .max-w-900 { 
-    max-width: 900px; 
-    margin-inline: auto;
-  }
-}
 </style>
 
 <!-- Ultra-Modern JavaScript -->
@@ -2455,9 +2341,6 @@ document.addEventListener('DOMContentLoaded', function() {
   window.nextStep = function() {
     if (validateCurrentStep()) {
       if (currentStep < totalSteps) {
-        // Save current scroll position
-        const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-        
         // Hide current step
         document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
         
@@ -2466,9 +2349,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
           document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
           updateProgressBar();
-          
-          // Restore scroll position to prevent jumping
-          window.scrollTo(0, currentScrollPos);
         }, 300);
       }
     }
@@ -2476,9 +2356,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.prevStep = function() {
     if (currentStep > 1) {
-      // Save current scroll position
-      const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      
       // Hide current step
       document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
       
@@ -2487,9 +2364,6 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
         updateProgressBar();
-        
-        // Restore scroll position to prevent jumping
-        window.scrollTo(0, currentScrollPos);
       }, 300);
     }
   };
@@ -2867,19 +2741,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     <!-- Footer Area -->
-    <footer class="footer-section footer-section--l3 position-relative" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); padding-top: 4rem; color: white;">
+    <footer class="footer-section footer-section--l3 position-relative bg-default" style="padding-top: 4rem;">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-7 col-xs-9">
             <div class="footer-brand-block footer-brand-block--l3 mb-7 mb-lg-5">
-              <p class="footer-brand-block--l3__text" style="color: rgba(255, 255, 255, 0.9);">There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+              <p class="footer-brand-block--l3__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+              <div class="newsletter-form newsletter-form--rounded">
+                <form action="https://finestwp.co/">
+                  <div class="d-flex align-items-center justify-content-center flex-column flex-xs-row">
+                    <input class="form-control " type="email" placeholder="Subscribe Our newsletter" required>
+                    <button class=" btn-icon" type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="row">
               <div class="col-xxl-4 col-xl-5 col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="footer-list-block footer-list-block--2 mb-8">
-                  <h4 class="footer-block-title" style="color: white;">Contact</h4>
+                  <h4 class="footer-block-title">Contact</h4>
                   <ul class="footer-widgets__list footer-widgets__list--l3 footer-widgets__list--l3__address">
                     <li> Patricia C. Amedee 4401 Waldeck New Street </li>
                     <li>info@yourdomain.com </li>
@@ -2889,7 +2771,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
                 <div class="footer-list-block footer-list-block--3 mb-8">
-                  <h4 class="footer-block-title" style="color: white;">Quick Links</h4>
+                  <h4 class="footer-block-title">Quick Links</h4>
                   <ul class="footer-widgets__list footer-widgets__list--l3">
                     <li>
                       <a href="home-it-services.html#">Home</a>
@@ -2908,7 +2790,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <div class=" offset-xxl-1 col-xl-4 col-lg-5 col-md-4 col-xs-8">
                 <div class="footer-widget footer-widget--l3 mb-8">
-                  <h4 class="footer-block-title" style="color: white;">Instagram</h4>
+                  <h4 class="footer-block-title">Instagram</h4>
                   <div class="footer-insta-gallery row">
                     <div class="col-4">
                       <img src="image/home-3/insta-1.png" alt="" class="w-100">
@@ -2937,7 +2819,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="copyright-block copyright-block--l3">
           <div class="row  text-center align-items-center">
             <div class="col-xs-6 text-sm-start">
-              <p class="copyright-text--l3" style="color: rgba(255, 255, 255, 0.8);">© 2021 Bloomcap Web Ui Template</p>
+              <p class="copyright-text--l3 ">© 2021 Bloomcap Web Ui Template</p>
             </div>
             <div class="col-xs-6 text-sm-end">
               <ul class="footer-social-share footer-social-share--rounded">
