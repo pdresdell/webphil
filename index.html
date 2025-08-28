@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="css/mobile-header-improved.css">
   <!-- Mobile Animations - Animations fluides au scroll pour mobile -->
   <link rel="stylesheet" href="css/mobile-animations.css">
+  <!-- Mobile Final Fix - Solution ultra simple -->
+  <link rel="stylesheet" href="css/mobile-final-fix.css">
   <style>
     /* Améliorations minimalistes Bloomcap */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -229,6 +231,16 @@
 </head>
 
 <body data-theme-mode-panel-active data-theme="light">
+  <!-- Header mobile simple et propre -->
+  <div id="simple-mobile-header" class="d-block d-lg-none">
+    <a href="#formulaire" class="cta">Démarrer maintenant</a>
+    <a href="index.html" class="logo">Bloomcap</a>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
   <div class="site-wrapper overflow-hidden ">
     <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
       <style>
@@ -576,9 +588,9 @@
       <div class="col-xl-7 col-lg-6 col-md-10 order-2 order-lg-2 d-flex justify-content-center">
         <div class="about-us__image text-center position-relative">
           <div class="position-relative" style="max-width: 600px; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);">
-            <img class="w-100" src="https://img.youtube.com/vi/Ljid39JfZXo/maxresdefault.jpg" alt="Video preview" style="filter: brightness(0.9);" />
+            <img class="w-100" src="https://img.youtube.com/vi/f7ndTr_tvNo/maxresdefault.jpg" alt="Video preview" style="filter: brightness(0.9);" />
             <div class="position-absolute top-50 start-50 translate-middle">
-              <a class="d-flex align-items-center justify-content-center" href="https://youtu.be/Ljid39JfZXo?si=pm-ZN0nMLraGREjA" 
+              <a class="d-flex align-items-center justify-content-center" href="https://youtu.be/f7ndTr_tvNo?si=ENdmkd0dJbHZJn1W" 
                  style="width: 100px; height: 100px; background: linear-gradient(45deg, #fbbf24, #f59e0b); border-radius: 50%; color: white; text-decoration: none; box-shadow: 0 12px 40px rgba(251, 191, 36, 0.5); transition: all 0.3s ease; transform: scale(1);"
                  onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 16px 50px rgba(251, 191, 36, 0.7)'"
                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 12px 40px rgba(251, 191, 36, 0.5)'">
@@ -756,7 +768,7 @@
               <div class="col-12">
                 <div class="d-flex align-items-start">
                   <div class="flex-shrink-0 me-3">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-2">
+                    <div class="rounded-circle p-2" style="background-color: #fbbf24;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1e40af" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
                         <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
                       </svg>
@@ -774,7 +786,7 @@
               <div class="col-12">
                 <div class="d-flex align-items-start">
                   <div class="flex-shrink-0 me-3">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-2">
+                    <div class="rounded-circle p-2" style="background-color: #fbbf24;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1e40af" class="bi bi-gear-fill" viewBox="0 0 16 16">
                         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
                       </svg>
@@ -792,7 +804,7 @@
               <div class="col-12">
                 <div class="d-flex align-items-start">
                   <div class="flex-shrink-0 me-3">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-2">
+                    <div class="rounded-circle p-2" style="background-color: #fbbf24;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1e40af" class="bi bi-shield-check" viewBox="0 0 16 16">
                         <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
                         <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
