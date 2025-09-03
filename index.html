@@ -226,6 +226,204 @@
       border-color: transparent !important;
     }
     
+    /* Mobile Menu Styles */
+    .mobile-menu-dropdown {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      width: 85%;
+      max-width: 320px;
+      height: calc(100vh - 60px);
+      background: white;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+      z-index: 99998;
+      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    
+    .mobile-menu-dropdown.active {
+      right: 0;
+    }
+    
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99997;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-content {
+      padding: 0;
+    }
+    
+    .mobile-menu-header {
+      padding: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .mobile-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--bloomcap-blue);
+    }
+    
+    .mobile-menu-close {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: #f3f4f6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-menu-close:hover {
+      background: #e5e7eb;
+      color: var(--bloomcap-blue);
+    }
+    
+    .mobile-menu-nav {
+      padding: 20px 0;
+    }
+    
+    .mobile-menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .mobile-menu-item {
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .mobile-menu-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      color: #1f2937;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-menu-link:hover {
+      background: #f9fafb;
+      color: var(--bloomcap-blue);
+      text-decoration: none;
+    }
+    
+    .submenu-icon {
+      transition: transform 0.3s ease;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    
+    .mobile-menu-item.active .submenu-icon {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: #f9fafb;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .mobile-submenu.active {
+      max-height: 200px;
+    }
+    
+    .mobile-submenu-link {
+      display: block;
+      padding: 14px 20px 14px 40px;
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-submenu-link:hover {
+      background: #f3f4f6;
+      color: var(--bloomcap-blue);
+      text-decoration: none;
+    }
+    
+    .mobile-menu-footer {
+      padding: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .mobile-menu-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--bloomcap-blue), #2563eb);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3);
+    }
+    
+    .mobile-menu-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+    
+    /* Body lock when menu is open */
+    body.menu-open {
+      overflow: hidden;
+    }
+    
+    /* Amélioration du hamburger */
+    #simple-mobile-header .hamburger {
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+    }
+    
+    /* Animation du hamburger */
+    body.menu-open #simple-mobile-header .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px) !important;
+    }
+    
+    body.menu-open #simple-mobile-header .hamburger span:nth-child(2) {
+      opacity: 0 !important;
+    }
+    
+    body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px) !important;
+    }
     
   </style>
 </head>
@@ -233,14 +431,53 @@
 <body data-theme-mode-panel-active data-theme="light">
   <!-- Header mobile simple et propre -->
   <div id="simple-mobile-header" class="d-block d-lg-none">
-    <a href="#formulaire" class="cta">Démarrer maintenant</a>
     <a href="index.html" class="logo">Bloomcap</a>
+    <a href="#formulaire" class="cta">Démarrer maintenant</a>
     <div class="hamburger" onclick="toggleMobileMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
+  
+  <!-- Menu Mobile Dropdown -->
+  <div id="mobile-menu-dropdown" class="mobile-menu-dropdown">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <nav class="mobile-menu-nav">
+        <ul class="mobile-menu-list">
+          <li class="mobile-menu-item has-submenu">
+            <a href="#" class="mobile-menu-link" onclick="toggleSubmenu(event, 'solutions-submenu')">
+              Solutions de liquidité
+              <i class="fas fa-chevron-down submenu-icon"></i>
+            </a>
+            <ul class="mobile-submenu" id="solutions-submenu">
+              <li><a href="index.html" class="mobile-submenu-link">Sale & Leaseback</a></li>
+              <li><a href="financement-rapide.html" class="mobile-submenu-link">Financement rapide</a></li>
+            </ul>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="a-propos.html" class="mobile-menu-link">À propos</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="#formulaire" class="mobile-menu-cta" onclick="toggleMobileMenu()">
+          Démarrer maintenant
+          <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+  
   <div class="site-wrapper overflow-hidden ">
     <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
       <style>
@@ -299,7 +536,7 @@
             </nav>
           </div>
           <div class="header-btn ">
-            <a class="btn btn btn-electric-violet-2 rounded-50 ms-lg-2 shadow--electric-violet-2-4 ms-auto text-white d-none d-sm-flex" href="home-it-services.html#">
+            <a class="btn btn btn-electric-violet-2 rounded-50 ms-lg-2 shadow--electric-violet-2-4 ms-auto text-white d-none d-sm-flex" href="#formulaire">
               Démarrer maintenant
             </a>
           </div>
@@ -1074,7 +1311,7 @@
 </section>
 
 <!-- Ultra-Modern Glassmorphism Lead Generation Form -->
-<section id="liquidite" class="section-wide section-padding-lg position-relative overflow-hidden" style="
+<section id="formulaire" class="section-wide section-padding-lg position-relative overflow-hidden" style="
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   min-height: 100vh;
   padding: 60px 0;
@@ -3155,6 +3392,59 @@ document.addEventListener('DOMContentLoaded', function() {
     submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
   };
 })();
+</script>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+// Mobile Menu Functionality
+function toggleMobileMenu() {
+  const menuDropdown = document.getElementById('mobile-menu-dropdown');
+  const menuOverlay = document.getElementById('mobile-menu-overlay');
+  const body = document.body;
+  
+  menuDropdown.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  body.classList.toggle('menu-open');
+}
+
+// Toggle Submenu
+function toggleSubmenu(event, submenuId) {
+  event.preventDefault();
+  const submenu = document.getElementById(submenuId);
+  const parentItem = event.target.closest('.mobile-menu-item');
+  
+  submenu.classList.toggle('active');
+  parentItem.classList.toggle('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+  const menuDropdown = document.getElementById('mobile-menu-dropdown');
+  const hamburger = document.querySelector('.hamburger');
+  const isClickInsideMenu = menuDropdown.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+  
+  if (!isClickInsideMenu && !isClickOnHamburger && menuDropdown.classList.contains('active')) {
+    toggleMobileMenu();
+  }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && document.getElementById('mobile-menu-dropdown').classList.contains('active')) {
+    toggleMobileMenu();
+  }
+});
+
+// Prevent scroll when menu is open
+document.addEventListener('touchmove', function(event) {
+  if (document.body.classList.contains('menu-open')) {
+    const menuDropdown = document.getElementById('mobile-menu-dropdown');
+    if (!menuDropdown.contains(event.target)) {
+      event.preventDefault();
+    }
+  }
+}, { passive: false });
 </script>
 
 </body>

@@ -30,14 +30,13 @@
     padding: 0 15px !important;
   }
   
-  /* Logo centré dans la colonne du milieu */
+  /* Logo aligné à gauche */
   #simple-mobile-header .logo {
-    text-align: center !important;
     font-size: 20px !important;
     font-weight: bold !important;
     color: #1e40af !important;
     text-decoration: none !important;
-    justify-self: center !important;
+    justify-self: start !important;
   }
   
   /* Style uniforme pour les deux boutons - BLEU avec texte BLANC */
@@ -55,7 +54,7 @@
     transition: all 0.2s ease !important;
   }
   
-  /* Bouton CTA */
+  /* Bouton CTA centré */
   #simple-mobile-header .cta {
     padding: 0 15px !important;
     text-decoration: none !important;
@@ -63,13 +62,15 @@
     font-weight: 500 !important;
     color: white !important;
     white-space: nowrap !important;
+    justify-self: center !important;
   }
   
-  /* Hamburger */
+  /* Hamburger aligné à droite */
   #simple-mobile-header .hamburger {
     width: 40px !important;
     flex-direction: column !important;
     padding: 0 !important;
+    justify-self: end !important;
   }
   
   /* Hover effect pour les deux boutons */
