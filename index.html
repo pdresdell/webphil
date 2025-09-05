@@ -30,8 +30,12 @@
   <link rel="stylesheet" href="css/mobile-header-improved.css">
   <!-- Mobile Animations - Animations fluides au scroll pour mobile -->
   <link rel="stylesheet" href="css/mobile-animations.css">
+  <!-- Mobile No Animations - Désactive les animations pour améliorer les performances -->
+  <link rel="stylesheet" href="css/mobile-no-animations.css">
   <!-- Mobile Final Fix - Solution ultra simple -->
   <link rel="stylesheet" href="css/mobile-final-fix.css">
+  <!-- Mobile Premium Design - Impact visuel desktop conservé sur mobile -->
+  <link rel="stylesheet" href="css/mobile-premium-design.css">
   <style>
     /* Améliorations minimalistes Bloomcap */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -343,19 +347,7 @@
       transform: rotate(180deg);
     }
     
-    .mobile-submenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #f9fafb;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    
-    .mobile-submenu.active {
-      max-height: 200px;
-    }
+    /* Styles du sous-menu supprimés - utilisation d'inline styles */
     
     .mobile-submenu-link {
       display: block;
@@ -440,36 +432,35 @@
     </div>
   </div>
   
-  <!-- Menu Mobile Dropdown -->
+  <!-- NOUVEAU MENU MOBILE SIMPLE -->
   <div id="mobile-menu-dropdown" class="mobile-menu-dropdown">
-    <div class="mobile-menu-content">
-      <div class="mobile-menu-header">
-        <span class="mobile-menu-title">Menu</span>
-        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
-          <i class="fas fa-times"></i>
-        </button>
+    <div style="height: 100%; overflow-y: auto; background: white;">
+      <!-- Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #eee;">
+        <span style="font-size: 18px; font-weight: bold;">Menu</span>
+        <button onclick="document.getElementById('mobile-menu-dropdown').classList.remove('active'); document.getElementById('mobile-menu-overlay').classList.remove('active');" 
+                style="background: none; border: none; font-size: 30px; cursor: pointer;">×</button>
       </div>
-      <nav class="mobile-menu-nav">
-        <ul class="mobile-menu-list">
-          <li class="mobile-menu-item has-submenu">
-            <a href="#" class="mobile-menu-link" onclick="toggleSubmenu(event, 'solutions-submenu')">
-              Solutions de liquidité
-              <i class="fas fa-chevron-down submenu-icon"></i>
-            </a>
-            <ul class="mobile-submenu" id="solutions-submenu">
-              <li><a href="index.html" class="mobile-submenu-link">Sale & Leaseback</a></li>
-              <li><a href="financement-rapide.html" class="mobile-submenu-link">Financement rapide</a></li>
-            </ul>
-          </li>
-          <li class="mobile-menu-item">
-            <a href="a-propos.html" class="mobile-menu-link">À propos</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="mobile-menu-footer">
-        <a href="#formulaire" class="mobile-menu-cta" onclick="toggleMobileMenu()">
-          Démarrer maintenant
-          <i class="fas fa-arrow-right ms-2"></i>
+      
+      <!-- Menu Items -->
+      <div style="padding: 20px;">
+        <!-- Solutions -->
+        <div style="margin-bottom: 30px;">
+          <p style="color: #666; font-weight: bold; margin-bottom: 15px;">SOLUTIONS DE LIQUIDITÉ</p>
+          <a href="index.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px;">→ Sale & Leaseback</a>
+          <a href="financement-rapide.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px;">→ Financement rapide</a>
+        </div>
+        
+        <!-- À propos -->
+        <div style="margin-bottom: 30px;">
+          <a href="a-propos.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px; font-weight: bold;">À PROPOS</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <a href="#formulaire" 
+           onclick="document.getElementById('mobile-menu-dropdown').classList.remove('active');"
+           style="display: block; background: #FF5722; color: white; padding: 15px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold;">
+          Démarrer maintenant →
         </a>
       </div>
     </div>
@@ -479,15 +470,23 @@
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
   
   <div class="site-wrapper overflow-hidden ">
-    <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
-      <style>
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+    <!-- Loader et animations supprimés -->
+    <style>
+        /* Désactiver les animations d'icônes sur mobile */
+      @media (max-width: 768px) {
+        .widgets.visible .d-flex[style*="background: linear-gradient"],
+        .visible .d-flex[style*="background: linear-gradient"],
+        .visible .d-flex[style*="#10b981"],
+        .visible .d-flex[style*="#3b82f6"],
+        .visible .d-flex[style*="#1e40af"],
+        .visible .d-flex[style*="#fbbf24"],
+        .visible .d-flex[style*="#f59e0b"],
+        .visible .d-flex[style*="#8b5cf6"],
+        .visible .d-flex[style*="#7c3aed"] {
+          animation: none !important;
         }
-      </style>
-      <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-    </div>
+      }
+    </style>
     <!-- Clean The Code And Hop in -->
     <!-- Header Area -->
     <!-- Preloader -->
@@ -507,7 +506,7 @@
               <span style="font-size: 24px; font-weight: bold; color: #fff;" class="dark-version-logo">Bloomcap</span>
             </a>
           </div>
-          <div class="menu-block-wrapper  menu-sep-left">
+          <div class="menu-block-wrapper menu-sep-left">
             <div class="menu-overlay"></div>
             <nav class="menu-block" id="append-menu-header">
               <div class="mobile-menu-head">
@@ -535,8 +534,8 @@
               </ul>
             </nav>
           </div>
-          <div class="header-btn ">
-            <a class="btn btn btn-electric-violet-2 rounded-50 ms-lg-2 shadow--electric-violet-2-4 ms-auto text-white d-none d-sm-flex" href="#formulaire">
+          <div class="header-btn" style="margin-left: auto;">
+            <a class="btn rounded-50 ms-lg-2 ms-auto text-white d-none d-sm-flex" style="background-color: #FF5722; border-color: #FF5722; padding: 12px 30px;" href="#formulaire">
               Démarrer maintenant
             </a>
           </div>
@@ -3247,175 +3246,39 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Mobile Scroll Animations - Observer léger pour animations au scroll -->
   <script src="js/mobile-scroll-animations.js"></script>
   
-<!-- SOLUTION SIMPLE MENU MOBILE -->
-<style>
-@media (max-width: 991px) {
-  /* Cache le menu existant qui ne fonctionne pas */
-  .mobile-menu-trigger { display: none !important; }
-  .menu-block { display: none !important; }
-  
-  /* Nouveau hamburger */
-  #new-hamburger {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    background: #1e40af;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  #new-hamburger span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: white;
-    margin: 3px 0;
-    transition: 0.3s;
-  }
-  
-  #new-hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  #new-hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  #new-hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  /* Nouveau menu */
-  #new-menu {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-    transition: right 0.3s ease;
-    z-index: 9998;
-    overflow-y: auto;
-  }
-  
-  #new-menu.open {
-    right: 0;
-  }
-  
-  #new-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 9997;
-  }
-  
-  #new-overlay.open {
-    display: block;
-  }
-  
-  body.menu-locked {
-    overflow: hidden;
-  }
-}
-</style>
+<!-- Menu mobile redondant complètement supprimé -->
 
-<!-- Hamburger simple -->
-<div id="new-hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+<!-- Menu redondant supprimé pour éviter les conflits -->
 
-<!-- Menu simple -->
-<div id="new-menu">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f8f9fa; border-bottom: 1px solid #ddd;">
-    <strong style="font-size: 18px;">MENU</strong>
-    <span id="new-close" style="font-size: 30px; cursor: pointer;">&times;</span>
-  </div>
-  <div style="padding: 20px;">
-    <a href="#" onclick="toggleSubmenu(event)" style="display: block; padding: 15px 10px; color: #333; text-decoration: none; border-bottom: 1px solid #eee; font-size: 16px;">
-      Solutions de liquidité ▼
-    </a>
-    <div id="submenu" style="display: none; padding-left: 20px; background: #f8f9fa;">
-      <a href="index.html" style="display: block; padding: 10px; color: #666; text-decoration: none; font-size: 14px;">Sale & Leaseback</a>
-      <a href="financement-rapide.html" style="display: block; padding: 10px; color: #666; text-decoration: none; font-size: 14px;">Financement rapide</a>
-    </div>
-    <a href="a-propos.html" style="display: block; padding: 15px 10px; color: #333; text-decoration: none; border-bottom: 1px solid #eee; font-size: 16px;">À propos</a>
-  </div>
-</div>
-
-<!-- Overlay -->
-<div id="new-overlay"></div>
-
-<script>
-// Solution simple sans dépendances
-(function() {
-  const hamburger = document.getElementById('new-hamburger');
-  const menu = document.getElementById('new-menu');
-  const overlay = document.getElementById('new-overlay');
-  const closeBtn = document.getElementById('new-close');
-  
-  function toggleMenu() {
-    const isOpen = menu.classList.contains('open');
-    if (isOpen) {
-      menu.classList.remove('open');
-      overlay.classList.remove('open');
-      hamburger.classList.remove('active');
-      document.body.classList.remove('menu-locked');
-    } else {
-      menu.classList.add('open');
-      overlay.classList.add('open');
-      hamburger.classList.add('active');
-      document.body.classList.add('menu-locked');
-    }
-  }
-  
-  hamburger.addEventListener('click', toggleMenu);
-  closeBtn.addEventListener('click', toggleMenu);
-  overlay.addEventListener('click', toggleMenu);
-  
-  window.toggleSubmenu = function(e) {
-    e.preventDefault();
-    const submenu = document.getElementById('submenu');
-    submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
-  };
-})();
-</script>
+<!-- Code du menu redondant supprimé -->
 
 <!-- Mobile Menu JavaScript -->
 <script>
-// Mobile Menu Functionality
+// Mobile Menu Functionality - VERSION SIMPLE
 function toggleMobileMenu() {
-  const menuDropdown = document.getElementById('mobile-menu-dropdown');
-  const menuOverlay = document.getElementById('mobile-menu-overlay');
-  const body = document.body;
-  
-  menuDropdown.classList.toggle('active');
-  menuOverlay.classList.toggle('active');
-  body.classList.toggle('menu-open');
+  try {
+    var menu = document.getElementById('mobile-menu-dropdown');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    
+    if (menu && overlay) {
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  } catch (e) {
+    console.error('Erreur menu:', e);
+  }
 }
 
-// Toggle Submenu
-function toggleSubmenu(event, submenuId) {
-  event.preventDefault();
-  const submenu = document.getElementById(submenuId);
-  const parentItem = event.target.closest('.mobile-menu-item');
-  
-  submenu.classList.toggle('active');
-  parentItem.classList.toggle('active');
-}
+// Fonction toggleSubmenu supprimée - utilisation d'inline onclick à la place
+
+// Code simplifié - pas besoin d'initialisation complexe
 
 // Close menu when clicking outside
 document.addEventListener('click', function(event) {

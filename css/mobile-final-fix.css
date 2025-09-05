@@ -39,10 +39,39 @@
     justify-self: start !important;
   }
   
-  /* Style uniforme pour les deux boutons - BLEU avec texte BLANC */
-  #simple-mobile-header .cta,
+  /* Bouton CTA avec la même couleur que sur desktop */
+  #simple-mobile-header .cta {
+    height: 40px !important;
+    padding: 0 15px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    background-color: #FF5722 !important;
+    border-color: #FF5722 !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-self: center !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.25) !important;
+  }
+  
+  /* Hover du CTA */
+  #simple-mobile-header .cta:hover {
+    background-color: #f4511e !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.35) !important;
+  }
+  
+  /* Hamburger reste bleu */
   #simple-mobile-header .hamburger {
     height: 40px !important;
+    width: 40px !important;
     min-width: 40px !important;
     border-radius: 8px !important;
     border: none !important;
@@ -51,30 +80,13 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    transition: all 0.2s ease !important;
-  }
-  
-  /* Bouton CTA centré */
-  #simple-mobile-header .cta {
-    padding: 0 15px !important;
-    text-decoration: none !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    color: white !important;
-    white-space: nowrap !important;
-    justify-self: center !important;
-  }
-  
-  /* Hamburger aligné à droite */
-  #simple-mobile-header .hamburger {
-    width: 40px !important;
     flex-direction: column !important;
     padding: 0 !important;
     justify-self: end !important;
+    transition: all 0.2s ease !important;
   }
   
-  /* Hover effect pour les deux boutons */
-  #simple-mobile-header .cta:hover,
+  /* Hover du hamburger */
   #simple-mobile-header .hamburger:hover {
     background: #1a3a9f !important;
     box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3) !important;

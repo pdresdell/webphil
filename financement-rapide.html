@@ -60,6 +60,10 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 @media (max-width: 768px) {
+  .hero-unified {
+    margin-top: 0 !important; /* Remove all top margin on mobile */
+    padding-top: 60px !important; /* Adjust padding instead */
+  }
   .hero-unified h1 {
     font-size: 2.25rem !important;
   }
@@ -244,6 +248,37 @@ section {
   text-decoration: none;
 }
 
+/* Mobile Header Fix - Remove gap between header and hero */
+@media (max-width: 768px) {
+  /* Fix header position and height */
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 60px !important;
+    background: white !important;
+  }
+  
+  /* Remove all spacing above hero section */
+  .hero-unified {
+    margin-top: 0 !important;
+    padding-top: 60px !important; /* Only account for fixed header height */
+    padding-bottom: 60px !important;
+  }
+  
+  /* Ensure no extra padding on body */
+  body {
+    padding-top: 0 !important;
+  }
+  
+  /* Also fix the inline padding on the section */
+  section.hero-unified[style*="padding"] {
+    padding: 60px 0 60px !important;
+  }
+}
+
 /* Accent Button Style */
 .btn-accent {
   display: inline-block;
@@ -286,6 +321,7 @@ section {
   color: var(--bloomcap-blue) !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 800 !important;
+  font-size: 24px !important;
 }
 
 /* Navigation styles */
@@ -726,36 +762,35 @@ body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
     </div>
   </div>
   
-  <!-- Menu Mobile Dropdown -->
+  <!-- NOUVEAU MENU MOBILE SIMPLE -->
   <div id="mobile-menu-dropdown" class="mobile-menu-dropdown">
-    <div class="mobile-menu-content">
-      <div class="mobile-menu-header">
-        <span class="mobile-menu-title">Menu</span>
-        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
-          <i class="fas fa-times"></i>
-        </button>
+    <div style="height: 100%; overflow-y: auto; background: white;">
+      <!-- Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #eee;">
+        <span style="font-size: 18px; font-weight: bold;">Menu</span>
+        <button onclick="document.getElementById('mobile-menu-dropdown').classList.remove('active'); document.getElementById('mobile-menu-overlay').classList.remove('active');" 
+                style="background: none; border: none; font-size: 30px; cursor: pointer;">×</button>
       </div>
-      <nav class="mobile-menu-nav">
-        <ul class="mobile-menu-list">
-          <li class="mobile-menu-item has-submenu">
-            <a href="#" class="mobile-menu-link" onclick="toggleSubmenu(event, 'solutions-submenu')">
-              Solutions de liquidité
-              <i class="fas fa-chevron-down submenu-icon"></i>
-            </a>
-            <ul class="mobile-submenu" id="solutions-submenu">
-              <li><a href="index.html" class="mobile-submenu-link">Sale & Leaseback</a></li>
-              <li><a href="financement-rapide.html" class="mobile-submenu-link">Financement rapide</a></li>
-            </ul>
-          </li>
-          <li class="mobile-menu-item">
-            <a href="a-propos.html" class="mobile-menu-link">À propos</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="mobile-menu-footer">
-        <a href="#contact" class="mobile-menu-cta" onclick="toggleMobileMenu()">
-          Démarrer maintenant
-          <i class="fas fa-arrow-right ms-2"></i>
+      
+      <!-- Menu Items -->
+      <div style="padding: 20px;">
+        <!-- Solutions -->
+        <div style="margin-bottom: 30px;">
+          <p style="color: #666; font-weight: bold; margin-bottom: 15px;">SOLUTIONS DE LIQUIDITÉ</p>
+          <a href="index.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px;">→ Sale & Leaseback</a>
+          <a href="financement-rapide.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px;">→ Financement rapide</a>
+        </div>
+        
+        <!-- À propos -->
+        <div style="margin-bottom: 30px;">
+          <a href="a-propos.html" style="display: block; padding: 12px 0; color: #333; text-decoration: none; font-size: 16px; font-weight: bold;">À PROPOS</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <a href="index.html#formulaire" 
+           onclick="document.getElementById('mobile-menu-dropdown').classList.remove('active');"
+           style="display: block; background: #FF5722; color: white; padding: 15px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold;">
+          Démarrer maintenant →
         </a>
       </div>
     </div>
@@ -765,14 +800,8 @@ body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
   
 <div class="site-wrapper overflow-hidden">
-<div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
-<div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #1e40af; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-</div>
+<!-- Loader supprimé -->
 <style>
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 /* Hide icons until fonts are loaded */
 [class*="ri-"], [class*="fa-"] {
   opacity: 0;
@@ -780,6 +809,18 @@ body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
 }
 .fonts-loaded [class*="ri-"], .fonts-loaded [class*="fa-"] {
   opacity: 1;
+}
+/* Désactiver les animations d'icônes sur mobile */
+@media (max-width: 768px) {
+  .feature-card .feature-icon,
+  .stat-box div[style*="background: linear-gradient"],
+  .feature-card.fade-in {
+    animation: none !important;
+  }
+  .feature-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 </style>
 <!-- Header Area -->
@@ -789,8 +830,8 @@ body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
 <!-- Brand Logo-->
 <div class="brand-logo">
 <a href="index.html" style="text-decoration: none;">
-<span style="font-size: 24px; font-weight: bold; color: #333;" class="light-version-logo">Bloomcap</span>
-<span style="font-size: 24px; font-weight: bold; color: #fff;" class="dark-version-logo">Bloomcap</span>
+<span class="light-version-logo">Bloomcap</span>
+<span class="dark-version-logo">Bloomcap</span>
 </a>
 </div>
 <div class="menu-block-wrapper menu-sep-left">
@@ -821,8 +862,8 @@ body.menu-open #simple-mobile-header .hamburger span:nth-child(3) {
 </ul>
 </nav>
 </div>
-<div class="header-btn">
-<a class="btn btn btn-electric-violet-2 rounded-50 ms-lg-2 shadow--electric-violet-2-4 ms-auto text-white d-none d-sm-flex" href="#contact">
+<div class="header-btn" style="margin-left: auto;">
+<a class="btn rounded-50 ms-lg-2 ms-auto text-white d-none d-sm-flex" style="background-color: #FF5722; border-color: #FF5722; padding: 12px 30px;" href="#contact">
 Démarrer maintenant
 </a>
 </div>
@@ -876,7 +917,6 @@ Démarrer maintenant
       <div class="mb-5">
         <img src="image/MG_logo.png" alt="Merchant Growth" style="height: 70px; width: auto;" loading="lazy" decoding="async">
       </div>
-      <h3 class="mb-5" style="font-size: 2rem; font-weight: 700; color: var(--text-dark);">Merchant Growth</h3>
       <div class="row g-5 mt-2">
         <div class="col-md-4">
           <div class="stat-box" style="padding: 20px;">
@@ -1204,14 +1244,26 @@ setTimeout(function() {
 <!-- Mobile Menu JavaScript -->
 <script>
 // Mobile Menu Functionality
+// Mobile Menu Functionality - VERSION SIMPLE
 function toggleMobileMenu() {
-  const menuDropdown = document.getElementById('mobile-menu-dropdown');
-  const menuOverlay = document.getElementById('mobile-menu-overlay');
-  const body = document.body;
-  
-  menuDropdown.classList.toggle('active');
-  menuOverlay.classList.toggle('active');
-  body.classList.toggle('menu-open');
+  try {
+    var menu = document.getElementById('mobile-menu-dropdown');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    
+    if (menu && overlay) {
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  } catch (e) {
+    console.error('Erreur menu:', e);
+  }
 }
 
 // Toggle Submenu
