@@ -590,7 +590,7 @@
           </p>
 
           <!-- CTA Buttons -->
-          <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+          <div class="d-flex flex-wrap gap-3 justify-content-start mt-4">
             <a href="https://www.youtube.com/watch?v=LWZ7iytIA6k"
                class="btn btn-lg px-4 py-3 d-flex align-items-center gap-2" 
                style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 12px; transition: all 0.3s ease; text-decoration: none;"
@@ -612,10 +612,10 @@
 
       <!-- Image Column -->
       <div class="col-lg-5 col-xl-6 col-md-5 d-flex justify-content-center">
-        <div class="position-relative" style="max-width: 420px;">
+        <div class="position-relative" style="max-width: 460px;">
           <!-- Modern card-style image container -->
           <div class="p-4 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2);">
-            <img class="w-100 rounded-3" src="image/home-3/welcome-woman-l3.png" alt="Professional team" style="filter: brightness(1.1);">
+            <img class="w-100 rounded-3" src="image/headerpict.png" alt="Professional team" style="filter: brightness(1.1); transform: scaleY(1.12); transform-origin: bottom;">
           </div>
           
           <!-- Floating stats cards -->
@@ -644,6 +644,144 @@
 <!-- Add Inter font for better typography -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  
+  /* ===== MOBILE HERO - Simple et Fluide ===== */
+  @media (max-width: 768px) {
+    /* Container principal fluide */
+    .welcome-area {
+      min-height: 100vh !important;
+      padding: 80px 0 40px 0 !important; /* Espace pour header mobile */
+      overflow-x: hidden !important;
+    }
+    
+    .welcome-area .container {
+      padding: 0 20px !important;
+    }
+    
+    /* Organisation simple en colonnes */
+    .welcome-area .row {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 30px !important;
+    }
+    
+    /* Colonne texte */
+    .welcome-area .col-lg-7 {
+      order: 1 !important;
+      width: 100% !important;
+    }
+    
+    /* Colonne image */
+    .welcome-area .col-md-5 {
+      order: 2 !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+    
+    /* Badge jaune optionnel */
+    .welcome-area .d-inline-flex {
+      display: inline-flex !important;
+      margin-bottom: 20px !important;
+      font-size: 0.8rem !important;
+      padding: 8px 16px !important;
+    }
+    
+    /* Titre bien proportionné */
+    .welcome-area h1 {
+      font-size: 2rem !important; /* 32px */
+      line-height: 1.3 !important;
+      margin-bottom: 20px !important;
+      font-weight: 700 !important;
+    }
+    
+    /* Sous-titre lisible */
+    .welcome-area p.fw-medium {
+      font-size: 1.1rem !important; /* 17px */
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+    }
+    
+    /* Texte italique */
+    .welcome-area p[style*="italic"] {
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 24px !important;
+    }
+    
+    /* CTAs bien espacés */
+    .welcome-area .d-flex {
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+    }
+    
+    /* Boutons adaptés mobile */
+    .welcome-area .btn {
+      flex: 1 1 auto !important;
+      min-width: 150px !important;
+      padding: 14px 20px !important;
+      font-size: 0.95rem !important;
+    }
+    
+    /* Image responsive */
+    .welcome-area .position-relative {
+      width: 100% !important;
+      max-width: 400px !important;
+    }
+    
+    /* Container image propre */
+    .welcome-area .p-4 {
+      padding: 20px !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-radius: 20px !important;
+    }
+    
+    /* Image bien visible */
+    .welcome-area img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 300px !important;
+      object-fit: contain !important;
+      transform: none !important;
+    }
+    
+    /* Badges flottants adaptés */
+    .welcome-area .position-absolute {
+      transform: scale(0.85) !important;
+    }
+    
+    /* Animations désactivées */
+    .welcome-area * {
+      animation: none !important;
+    }
+  }
+  
+  /* Ajustements pour très petits écrans */
+  @media (max-width: 400px) {
+    .welcome-area h1 {
+      font-size: 1.75rem !important;
+    }
+    
+    .welcome-area .btn {
+      width: 100% !important;
+    }
+    
+    .welcome-area .d-flex {
+      flex-direction: column !important;
+    }
+  }
+  
+  /* Tablet optimization */
+  @media (min-width: 769px) and (max-width: 991px) {
+    .welcome-area .position-relative {
+      max-width: 350px !important;
+    }
+    
+    /* Hide floating stats on tablets for cleaner look */
+    .welcome-area .position-absolute {
+      display: none !important;
+    }
+  }
   
   /* Modern service cards styling */
   .widgets.widgets__services-single {
@@ -1299,15 +1437,8 @@
       
     </div>
 
-    <!-- CTA Final -->
-    <div class="text-center mt-5">
-      <p class="mb-4" style="color: #6b7280; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 500;">
-        Prêt à transformer vos équipements en liquidités ?
-      </p>
-      <a href="#formulaire" class="btn btn-lg px-5 py-3 fw-semibold" style="background: linear-gradient(45deg, #fbbf24, #f59e0b); color: #1e40af; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(251, 191, 36, 0.3); transition: all 0.3s ease; text-decoration: none; font-family: 'Inter', sans-serif;">
-        Commencer l'évaluation
-      </a>
-    </div>
+    <!-- Espacement réduit -->
+    <div style="height: 40px;"></div>
     
   </div>
 </section>
@@ -1315,8 +1446,7 @@
 <!-- Ultra-Modern Glassmorphism Lead Generation Form -->
 <section id="formulaire" class="section-wide section-padding-lg position-relative overflow-hidden" style="
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-  min-height: 100vh;
-  padding: 60px 0;
+  padding: 10px 0;
 ">
   
   <!-- Background Elements - Removed animation -->
@@ -1350,31 +1480,32 @@
       <div class="col-lg-10 col-xl-8">
         
         <!-- Header Section -->
-        <div class="text-center mb-5">
-          <h1 class="display-4 fw-bold mb-4" style="
+        <div class="text-center mb-2">
+          <h1 class="display-5 fw-bold mb-2" style="
             color: white;
             font-family: 'Poppins', sans-serif;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            font-size: 2.5rem;
           ">
             Transformez vos équipements en liquidités
           </h1>
           
-          <div class="d-inline-flex align-items-center gap-3 px-6 py-3 mb-4 rounded-pill" style="
+          <div class="d-inline-flex align-items-center gap-3 px-4 py-2 mb-2 rounded-pill" style="
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           ">
             <div class="pulse-dot"></div>
-            <span style="color: white; font-weight: 600; font-size: 1.1rem; font-family: 'Inter', sans-serif;">
+            <span style="color: white; font-weight: 600; font-size: 1rem; font-family: 'Inter', sans-serif;">
               Offre sous 48h
             </span>
           </div>
           
           <p class="lead mb-0" style="
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            line-height: 1.5;
             font-family: 'Inter', sans-serif;
             max-width: 600px;
             margin: 0 auto;
@@ -1385,7 +1516,7 @@
         </div>
 
         <!-- Progress Bar -->
-        <div class="mb-5">
+        <div class="mb-2">
           <div class="progress-container" style="
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
@@ -1394,7 +1525,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
           ">
             <div id="progressBar" class="progress-bar" style="
-              height: 8px;
+              height: 6px;
               background: linear-gradient(90deg, #1e40af, #3b82f6);
               border-radius: 50px;
               width: 0%;
@@ -1402,10 +1533,10 @@
               box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
             "></div>
           </div>
-          <div class="d-flex justify-content-between mt-2">
-            <small style="color: rgba(255, 255, 255, 0.7); font-family: 'Inter', sans-serif;">Informations personnelles</small>
-            <small style="color: rgba(255, 255, 255, 0.7); font-family: 'Inter', sans-serif;">Besoins financiers</small>
-            <small style="color: rgba(255, 255, 255, 0.7); font-family: 'Inter', sans-serif;">Détails équipements</small>
+          <div class="d-flex justify-content-between mt-1" style="font-size: 0.85rem;">
+            <small style="color: rgba(255, 255, 255, 0.9); font-family: 'Inter', sans-serif; font-weight: 500;">Informations personnelles</small>
+            <small style="color: rgba(255, 255, 255, 0.9); font-family: 'Inter', sans-serif; font-weight: 500;">Besoins financiers</small>
+            <small style="color: rgba(255, 255, 255, 0.9); font-family: 'Inter', sans-serif; font-weight: 500;">Détails équipements</small>
           </div>
         </div>
 
@@ -1418,14 +1549,14 @@
           box-shadow: 0 20px 80px rgba(30, 64, 175, 0.15);
           overflow: hidden;
           max-width: 800px;
-          margin: 40px auto;
-          padding: 20px;
+          margin: 10px auto 0;
+          padding: 15px;
         ">
           
-          <div class="p-4 p-md-6">
+          <div class="p-2 p-md-3">
             
             <!-- Trust Signals Header -->
-            <div class="d-flex justify-content-center gap-4 mb-5 flex-wrap">
+            <div class="d-flex justify-content-center gap-3 mb-2 flex-wrap">
               <div class="trust-badge">
                 <i class="fas fa-clock"></i>
                 <span>48h</span>
@@ -1941,7 +2072,8 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
   text-align: center;
 }
 
@@ -2543,6 +2675,61 @@ textarea.simple-form-input {
     text-align: center;
     flex: 1;
     min-width: 0;
+  }
+  
+  /* Amélioration de la lisibilité du texte sous "Offre sous 48h" sur mobile */
+  #formulaire .lead {
+    color: white !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Réduction drastique des espacements sur mobile */
+  #formulaire {
+    padding: 5px 0 20px 0 !important;
+  }
+  
+  #formulaire .text-center {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  #formulaire h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .form-card {
+    margin: 5px auto !important;
+    padding: 10px !important;
+  }
+  
+  .form-card .p-2 {
+    padding: 0.5rem !important;
+  }
+  
+  .step-title {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+    margin-top: 0 !important;
+  }
+  
+  .trust-badge {
+    display: none !important;
+  }
+  
+  /* Réduction de la hauteur de la progress bar sur mobile */
+  .progress-container {
+    padding: 2px !important;
+  }
+  
+  #progressBar {
+    height: 4px !important;
+  }
+  
+  /* Ajustement des labels de progression */
+  #formulaire .d-flex.justify-content-between {
+    font-size: 0.7rem !important;
+    margin-top: 0.25rem !important;
   }
 }
 
